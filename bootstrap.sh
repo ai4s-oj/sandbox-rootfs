@@ -36,5 +36,7 @@ mkdir -p "$ROOTFS_PATH"
 debootstrap --components=main,universe jammy "$ROOTFS_PATH" "$MIRROR"
 
 cp "$INSTALL_SCRIPT" "$ROOTFS_PATH/root"
+echo "Running $INSTALL_SCRIPT in chroot..."
 arch-chroot "$ROOTFS_PATH" "/root/$INSTALL_SCRIPT"
+echo "Removing $INSTALL_SCRIPT from chroot..."
 rm "$ROOTFS_PATH/root/$INSTALL_SCRIPT"
