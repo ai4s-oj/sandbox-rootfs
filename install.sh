@@ -97,3 +97,33 @@ apt-get clean
 # Install testlib
 git clone https://github.com/lyrio-dev/testlib /tmp/testlib
 cp /tmp/testlib/testlib.h /usr/include/
+
+
+# Install vcpkg
+cd /opt
+git clone https://github.com/microsoft/vcpkg
+cd vcpkg
+./bootstrap-vcpkg.sh
+./vcpkg install nlohmann-json
+# /opt/vcpkg/packages/nlohmann-json_x64-linux/include/
+
+
+# Install python environment
+sudo apt install python3.9-venv
+sudo apt install python3.10-venv
+/usr/bin/python3.10 -m venv judge3.10
+source /opt/judge3.10/bin/activate
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+rm get-pip.py
+pip install --upgrade pip
+pip --version
+pip install numpy
+pip install scipy
+deactivate
+
+/usr/bin/python3.9 -m venv judge3.9
+source /opt/judge3.9/bin/activate
+pip install numpy
+pip install scipy
+deactivate
