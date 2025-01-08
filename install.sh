@@ -109,15 +109,14 @@ cd vcpkg
 
 
 # Install python environment
-sudo apt install python3.9-venv
-sudo apt install python3.10-venv
+apt install -y python3.9-venv
+apt install -y python3.10-venv
 /usr/bin/python3.10 -m venv judge3.10
 source /opt/judge3.10/bin/activate
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
 rm get-pip.py
 pip install --upgrade pip
-pip --version
 pip install numpy
 pip install scipy
 deactivate
