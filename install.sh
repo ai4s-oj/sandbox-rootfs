@@ -109,6 +109,7 @@ cd vcpkg
 
 
 # Install python environment
+cd /opt
 apt install -y python3.9-venv
 apt install -y python3.10-venv
 /usr/bin/python3.10 -m venv judge3.10
