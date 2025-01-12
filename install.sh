@@ -69,16 +69,16 @@ apt-get install -y g++-$GCC_VERSION-multilib \
 su sandbox -c "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
 
 # Install Kotlin via SDKMAN!
-su sandbox -c "curl -s https://get.sdkman.io | bash"
-su sandbox -s /bin/bash -c "source ~/.sdkman/bin/sdkman-init.sh && sdk install kotlin"
+# su sandbox -c "curl -s https://get.sdkman.io | bash"
+# su sandbox -s /bin/bash -c "source ~/.sdkman/bin/sdkman-init.sh && sdk install kotlin"
 
 # Create symlinks for compilers and interpreters with non-common names and locations
 ln -s /usr/bin/g++-$GCC_VERSION /usr/local/bin/g++
 ln -s /usr/bin/gcc-$GCC_VERSION /usr/local/bin/gcc
 ln -s /usr/bin/clang-$LLVM_VERSION /usr/local/bin/clang
 ln -s /usr/bin/clang++-$LLVM_VERSION /usr/local/bin/clang++
-ln -s /sandbox/.sdkman/candidates/kotlin/current/bin/kotlin /usr/local/bin/kotlin
-ln -s /sandbox/.sdkman/candidates/kotlin/current/bin/kotlinc /usr/local/bin/kotlinc
+# ln -s /sandbox/.sdkman/candidates/kotlin/current/bin/kotlin /usr/local/bin/kotlin
+# ln -s /sandbox/.sdkman/candidates/kotlin/current/bin/kotlinc /usr/local/bin/kotlinc
 ln -s /sandbox/.cargo/bin/rustc /usr/local/bin/rustc
 
 # Create wrapper for GHC
